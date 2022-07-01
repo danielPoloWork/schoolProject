@@ -17,19 +17,19 @@ public class Teacher {
   }
 
   // SELECT
-  public String selectBirthDate() {
+  public String getBirthDate() {
     return this.birthDate;
   }
 
-  public String selectId() {
+  public String getId() {
     return this.id;
   }
 
-  public String selectName() {
+  public String getName() {
     return this.name;
   }
 
-  public String selectSurname() {
+  public String getSurname() {
     return this.surname;
   }
 }
