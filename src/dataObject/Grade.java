@@ -1,58 +1,62 @@
 package dataObject;
 
 import enumObject.GradeValueEnum;
+import enumObject.SubjectTypeEnum;
 
 public class Grade {
 
   // DECLARATION
   private final String id;
   private final GradeValueEnum value;
+  private final SubjectTypeEnum subject;
   private final String studentId;
   private final String teacherId;
+  private final String dateTimeCreation;
 
-  private String dateTime;
-  private boolean isUpdated = false;
+  private String dateTimeUpdate;
 
   // CONSTRUCTOR
-  public Grade(String idArg, GradeValueEnum valueArg, String dateTimeArg, String studentIdArg, String teacherIdArg) {
-    this.dateTime = dateTimeArg;
+  public Grade(String idArg, GradeValueEnum valueArg, SubjectTypeEnum subjectArg, String dateTimeCreationArg, String dateTimeUpdateArg, String studentIdArg, String teacherIdArg) {
+    this.dateTimeCreation = dateTimeCreationArg;
+    this.dateTimeUpdate = dateTimeUpdateArg;
     this.id = idArg;
     this.studentId = studentIdArg;
+    this.subject = subjectArg;
     this.teacherId = teacherIdArg;
     this.value = valueArg;
   }
 
   // SELECT
-  public String selectDateTime() {
-    return this.dateTime;
+  public String getDateTimeCreation() {
+    return this.dateTimeCreation;
   }
 
-  public String selectId() {
+  public String getDateTimeUpdate() {
+    return this.dateTimeUpdate;
+  }
+
+  public String getId() {
     return this.id;
   }
 
-  public boolean selectIsUpdated() {
-    return this.isUpdated;
-  }
-
-  public String selectStudentId() {
+  public String getStudentId() {
     return this.studentId;
   }
 
-  public String selectTeacherId() {
+  public SubjectTypeEnum getSubject() {
+    return this.subject;
+  }
+
+  public String getTeacherId() {
     return this.teacherId;
   }
 
-  public GradeValueEnum selectValue() {
+  public GradeValueEnum getValue() {
     return this.value;
   }
 
   // INSERT
-  public void insertDateTime(String dateTimeArg) {
-    this.dateTime = dateTimeArg;
-  }
-
-  public void insertUpdated(boolean isUpdatedArg) {
-    this.isUpdated = isUpdatedArg;
+  public void setDateTimeUpdate(String dateTimeUpdateArg) {
+    this.dateTimeUpdate = dateTimeUpdateArg;
   }
 }
